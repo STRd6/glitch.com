@@ -1,0 +1,83 @@
+.markdown-content
+
+  *:first-child
+    margin-top: 0.5rem !important
+
+  // text
+  //h1,
+  //h2
+  //  font-size: 18px
+  //  padding-bottom: 0.2em
+  //  border-bottom: 1px solid section-line
+  //  margin: 1em 0
+  //h1
+  //  font-size: 20px
+  //h1,
+  //h2,
+  //h3
+  //  margin-top: 1.5em
+  //h2
+  //  font-weight: 600
+  //h3,
+  //h4,
+  //h5
+  //  font-size: 16px
+  //  font-weight: 600
+  //p
+  //  line-height: 1.4em
+  a
+    color: link
+    &:hover
+      text-decoration: underline
+  //p,
+  pre,
+  table,
+  ul
+    margin-left: 1rem
+
+  // code
+  pre
+    background-color: secondary-background
+    padding: 16px
+    border-radius: 5px
+    code
+      border-radius: 0
+      padding: 0
+  code
+    font-family: monospace
+    background-color: secondary-background
+    border-radius: 3px
+    padding: 2px 3px
+    font-size: 14px
+
+  // tables
+  table,
+  th,
+  td
+    border: 1px solid section-line
+    padding: 7px 14px
+  tr:nth-child(even)
+    background-color: secondary-background
+  hr
+    border: 0
+    border-top: 1px solid section-line
+
+  // lists
+  ul,
+  ol
+    margin-bottom: 1rem
+  ul
+    padding-left: 1rem
+    list-style-type: square
+    ul
+      list-style-type: square
+  ol
+    ul
+      list-style-type: square
+  li
+    line-height: 24px
+
+  // images
+  img
+    max-width: 100%
+    border-radius: 3px

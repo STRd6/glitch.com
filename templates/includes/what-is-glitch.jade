@@ -1,0 +1,25 @@
+- play = "https://cdn.hyperdev.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fplay.svg"
+- whatsGlitchWide = "https://cdn.glitch.com/f7224274-1330-4022-a8f2-8ae09dbd68a8%2Fwhats-glitch-wide.svg?1499885209761"
+- whatsGlitchNarrow = "https://cdn.glitch.com/f7224274-1330-4022-a8f2-8ae09dbd68a8%2Fwhats-glitch-narrow.svg?1499884900667"
+- free = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ffree.svg?1499350845981"
+
+section.what-is-glitch(class=@hiddenIfUserIsSignedIn)
+  h1.headline
+    a(href=@baseUrl)
+      span= "Glitch"
+    span= " "
+    span is the friendly community where you'll build the app of your dreams
+
+  span
+    a(href="https://glitch.com/about")
+      figure(title="How Glitch works")
+        img.wide(src=whatsGlitchWide alt="Create a node app, or remix one. It updates as you type. Code with Friends!")
+        img.narrow(src=whatsGlitchNarrow alt="Create a node app, or remix one. It updates as you type. Code with Friends!")
+    p
+      span And it's
+        img.free(src=free alt="free")
+      span= ". "
+      .video(click=@showVideoOverlay)
+        img.play-button(src=play alt="play")
+        span How it works in 2 minutes
+

@@ -1,0 +1,70 @@
+// converted from tooltips.styl
+
+tooltip-background = rgba(0,0,0,0.85)
+background-color = white
+secondary = #9B9B9B
+
+.touch
+  [data-tooltip]::before,
+  [data-tooltip]::after
+    display:none
+
+
+[data-tooltip]
+  position: relative
+  box-sizing: border-box
+
+[data-tooltip]::before,
+[data-tooltip]::after
+  border: none
+  box-sizing: inherit
+  display: inline-block
+  font-style: normal
+  font-weight: normal
+  opacity: 0
+  pointer-events: none
+  position: absolute
+  transform: translateX(50%)
+  right: 50%
+  text-align: center
+  text-decoration: none
+  text-shadow: none
+  text-transform: none
+  top: 100%
+  transition: opacity 0.2s step-start 100ms
+  visibility: hidden
+  z-index: 9
+
+[data-tooltip]::before
+  background: tooltip-background
+  border-radius: 5px
+  font-size: 12px
+  padding: 6px 8px
+  color: background-color
+  content: attr(data-tooltip)
+  margin-top: 5px
+  white-space: pre
+  word-wrap: break-word
+
+[data-tooltip]::after
+  border: 5px solid transparent
+  border-bottom-color: tooltip-background
+  content: ''
+  margin-top: -5px
+
+[data-tooltip]:hover::before,
+[data-tooltip]:hover::after,
+[data-tooltip]:focus::before,
+[data-tooltip]:focus::after
+  visibility: visible
+  opacity: 1
+
+[data-tooltip-left]::before,
+[data-tooltip-left]::after
+  transform: translateX(85%)
+  right: 20px
+
+[data-tooltip-right]::before,
+[data-tooltip-right]::after
+  transform: translateX(10%)
+  right: 42%

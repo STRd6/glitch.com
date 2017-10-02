@@ -1,0 +1,56 @@
+- Loader = require "../includes/loader"
+- TeamUserPresenter = require "../../presenters/team-user-avatar"
+
+main.user-page.team-page(role="main")
+
+  = @ctaButtons
+
+  section.profile
+    .profile-container(style=@teamProfileStyle)
+      .profile-info
+        .loader(class=@hiddenIfTeamFetched)
+          span= Loader(@application)
+
+        .user-avatar-container(class=@hiddenUnlessTeamFetched)
+          .user-avatar(style=@teamAvatarStyle)
+            - # img(src="#{@teamAvatarUrl()}")
+            button.button-small.button-tertiary.upload-avatar-button(class=@hiddenUnlessCurrentUserIsOnTeam click=@uploadAvatar) Upload Avatar
+
+          .user-information
+            h1.username= @teamName()
+              span(data-tooltip=@verifiedTeamTooltip)
+                img.verified(src=@verifiedImage class=@hiddenUnlessVerified)
+
+            .users-information
+              .users.team-users
+                = @teamUsers
+
+              button.button.button-small.button-tertiary.add-user.opens-pop-over(class=@hiddenUnlessCurrentUserIsOnTeam click=@toggleAddTeamUserPop) Add
+                = @addTeamUserPop
+
+            p.thanks(class=@hiddenUnlessTeamHasThanks)= @teamThanks()
+              span= " "
+              span.emoji.sparkling_heart
+
+            p.description.content-editable(class=@hiddenUnlessCurrentUserIsOnTeam keyup=@updateDescription blur=@applyDescription placeholder="Tell us about your team" contenteditable=true role="textbox" aria-multiline=true spellcheck=false)=@initialTeamDescription                
+            p.description.read-only(class=@hiddenIfCurrentUserIsOnTeam class=@hiddenIfNoDescription)= @description
+
+    button.button-small.button-tertiary.upload-cover-button(class=@hiddenUnlessCurrentUserIsOnTeam click=@uploadCover) Upload Cover
+
+  section
+    button.button.add-project.has-emoji.opens-pop-over(class=@hiddenUnlessCurrentUserIsOnTeam click=@toggleAddTeamProjectPop) Add Project
+      .emoji.bento-box
+      = @addTeamProjectPop
+
+  span(class=@hiddenIfNotOnTeamAndNoPins)
+    = @pinnedProjectsList
+  = @recentProjects
+
+  section.marketing(class=@hiddenIfOnTeam)
+    img(src="https://cdn.glitch.com/55f8497b-3334-43ca-851e-6c9780082244%2Fteams-boombox.svg?1503591763497")
+    .content-container
+      p Want a page like this? Learn more about Glitch for Platforms
+      a(href="https://glitch.com/forplatforms")
+        button.has-emoji
+          span Get Your Own
+          span.emoji.fishing_pole

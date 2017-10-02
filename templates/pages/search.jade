@@ -1,0 +1,42 @@
+- cat = "https://cdn.gomix.com/us-east-1%3Acba180f4-ee65-4dfc-8dd5-f143280d3c10%2Fcat.svg"
+
+- CategoriesPresenter = require "../../presenters/categories"
+- TeamItemPresenter = require "../../presenters/team-item"
+- UserItemPresenter = require "../../presenters/user-item"
+- ProjectItemPresenter = require "../../presenters/project-item"
+- Loader = require "../includes/loader"
+
+- context = @application
+
+main.search-results(role="main")
+
+  article(class=@hiddenIfSearchResultsHaveNoTeams)
+    h2 Teams
+    ul.teams-container
+      - @searchResultsTeams().forEach (team) ->
+        = TeamItemPresenter(context, team)
+    span(class=@hiddenIfSearchResultsTeamsLoaded)
+      = Loader(this)
+
+
+  article(class=@hiddenIfSearchResultsHaveNoUsers)
+    h2 Users
+    ul.users-container
+      - @searchResultsUsers().forEach (user) ->
+        = UserItemPresenter(context, user)
+    span(class=@hiddenIfSearchResultsUsersLoaded)
+      = Loader(this)
+
+  article.projects(class=@hiddenIfSearchResultsHaveNoProjects)
+    h2 Projects
+    ul.projects-container
+      - @searchResultsProjects().forEach (project) ->
+        = ProjectItemPresenter(context, project, {})
+    span(class=@hiddenIfSearchResultsProjectsLoaded)
+      = Loader(this)
+
+  article.no-results(class=@hiddenUnlessSearchHasNoResults)
+    p no results found
+    img(src=cat)
+
+  = CategoriesPresenter(@application)

@@ -1,0 +1,10 @@
+dialog.pop-over.cta-pop(class=@hiddenUnlessCtaPopVisible click=@stopPropagation)
+
+  section.pop-over-actions.last-section
+    a.button-link(href=@newProjectLink onclick=@trackNewProject)
+      .button.has-emoji Create a Node App
+        .emoji.sparkles
+
+    a.button-link(href=@newWebsiteLink onclick=@trackNewWebsite)
+      .button.has-emoji Create a Website
+        .emoji.framed_picture

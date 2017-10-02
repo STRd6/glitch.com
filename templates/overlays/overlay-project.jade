@@ -1,0 +1,60 @@
+- Loader = require "../includes/loader"
+- showIcon = "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fshow-app.svg"
+- defaultAvatar = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fglitch-team-avatar.svg"
+
+.overlay-background(class=@hiddenUnlessOverlayProjectVisible click=@hideOverlay)
+
+  dialog.overlay.project-overlay(click=@stopPropagation tabindex="-1" class=@hiddenUnlessProject)
+    section.pop-over-info
+      img.avatar(src=@projectAvatar)
+      .overlay-title= @projectDomain
+
+    section.pop-over-actions.has-buttons(class=@hiddenIfCurrentUserInProject)
+      a.button-link.show-app-link(href=@showLink)
+        .button.show-app
+          img(src=showIcon)
+          span Preview
+      a.button-link.project-link(href=@editorLink)
+        .button View Source
+      a.button-link.remix-link(href=@remixLink onclick=@trackRemix)
+        .button.button-cta Remix your own
+
+    section.pop-over-actions.has-buttons.editor-actions(class=@hiddenUnlessCurrentUserInProject)
+      a.button-link.show-app-link(href=@showLink)
+        .button.show-app
+          img(src=showIcon)
+          span Preview
+      a.button-link.project-link(href=@editorLink)
+        .button.button-cta Edit Project
+
+    section.pop-over-actions.markdown-container(class=@warningIfProjectNotFound)
+      .users
+        = @projectUsers
+
+      .markdown-content
+        = @overlayReadme
+
+        span(class=@hiddenUnlessProjectNotFound)
+          h1 
+            span= "#{@projectDomain()} " 
+            span couldn't be found
+          p 
+            span It might've been renamed or removed. If you can't find it let us know on the 
+              a(href="https://support.glitch.com") support forum
+              span .
+
+        span(class=@hiddenUnlessReadmeNotFound)
+          h1 
+            span This is
+            span= " #{@projectDomain()}" 
+          p 
+            span This project would even better with a 
+            code README.md
+        
+        
+      span(class=@hiddenIfOverlayReadmeLoaded)
+        = Loader(this)
+
+    section.pop-over-info.last-section
+      a.thoughts-link(href=@projectThoughtsMailto)
+        button.button-small.thoughts What do you think?

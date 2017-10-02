@@ -1,0 +1,46 @@
+{
+  "name": "glitch-community-site",
+  "version": "0.0.1",
+  "description": "Find cool projects and people using Glitch",
+  "scripts": {
+    "start": "sh/start.sh"
+  },
+  "dependencies": {
+    "express": "^4.15.5",
+    "browserify": "^14.4.0",
+    "jadelet": "^0.8.0-pre.7",
+    "body-parser": "^1.18.2",
+    "stylus": "^0.54.5",
+    "underscore": "^1.8.3",
+    "markdown-it": "^8.4.0",
+    "ejs": "^2.5.7",
+    "o_0": "^0.3.8",
+    "markdown-it-sanitizer": "^0.4.3",
+    "axios": "^0.16.2",
+    "querystringify": "^1.0.0",
+    "exorcist": "^0.4.0",
+    "uglify-js": "2.6.1",
+    "autoprefixer-stylus": "^0.14.0",
+    "moment": "^2.18.1",
+    "randomcolor": "^0.5.3",
+    "isuuid": "^0.1.0",
+    "quantize": "^1.0.2",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-polyfill": "^6.26.0",
+    "coffeescript": "2.0.0"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/community"
+  },
+  "keywords": [
+    "node",
+    "glitch",
+    "express",
+    "jadelet"
+  ],
+  "license": "GPL-3.0"
+}

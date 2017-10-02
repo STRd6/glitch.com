@@ -1,0 +1,17 @@
+- TeamUserPresenter = require "../../presenters/team-user-avatar"
+
+li
+  a(href=@url)
+    .item(@style)
+      .content
+        img.avatar(src=@avatarUrl alt=@name)
+        .information
+          .button
+            span= @name
+          span(data-tooltip=@verifiedTeamTooltip)
+            img.verified(src=@verifiedImage class=@hiddenUnlessVerified)
+
+          = @usersListPresenter
+          p.thanks(class=@hiddenUnlessThanks)= @thanks
+            span.emoji.sparkling_heart
+          p.description(class=@hiddenUnlessDescription)= @truncatedDescription

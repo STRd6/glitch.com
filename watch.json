@@ -1,0 +1,22 @@
+{
+  "install": {
+    "include": [
+      "^package\\.json$",
+      "^\\.env$"
+    ]
+  },
+  "restart": {
+    "exclude": [
+      "^dist/",
+      "^test/"
+    ],
+    "include": [
+      "^sh/start.sh$",
+      "\\.coffee$",
+      "\\.jade",
+      "\\.json",
+      "\\.styl"
+    ]
+  },
+  "throttle": 100
+}

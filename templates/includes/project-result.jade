@@ -1,0 +1,7 @@
+.result-container(style=@hoverBackground)
+  li.result.project-result(tabindex=0 click=@addProjectToTeam keydown=@projectResultKey)
+    img.result-avatar(src=@avatarUrl)
+    .result-information
+      = @usersListPresenter
+      .result-name.result-info= @name
+      .result-description.result-info= @description

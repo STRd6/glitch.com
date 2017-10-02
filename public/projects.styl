@@ -1,0 +1,238 @@
+project-avatar-size = 42px
+
+.projects
+  clear: both
+  display: inline-block
+  width: 100%
+  vertical-align: top
+  border-radius: 5px
+  padding: 16px
+  
+  a
+    color: primary
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+
+  header
+    float: left
+    width: 22%
+    @media (max-width: hugeViewport)
+      width: 21%
+
+  .placeholder
+    margin-top: 12px
+    .psst
+      width: 50px
+      display: inline-block
+      vertical-align: middle
+      margin-right: .5rem
+    p
+      display: inline-block
+      vertical-align: bottom
+    
+  .category
+    padding-bottom: 0
+    margin-top: 0
+    margin-right: 3%
+    @media (max-width: 800px)
+      float: none
+      width: initial
+      width: 100%
+      .category-description
+        max-width: initial
+
+  .category-name
+    display: inline-block
+    h2
+      margin-top: 0
+    .arrow
+      margin-left: 5px
+
+  .category-image-container
+    display: block
+    .category-image
+      display: inline-block
+
+  .category-description
+    font-size: 14px
+    margin-bottom: 0
+
+  .projects-container
+    margin: 0
+    padding: 0
+    list-style-type: none
+    // overflow: auto
+    overflow: hidden
+
+    li
+      float: left
+      display: block
+      margin-right: 10px
+      width: 32.2%
+      position: relative
+      margin-bottom: 12px
+      @media (max-width: largeViewport)
+        width: 32%
+      @media (max-width: 592px)
+        width: 100%
+      &:last-child
+        margin-right: 0
+
+    a
+      &:hover
+        text-decoration: none
+      
+    .down-arrow
+      margin: 0
+    
+  .project
+    font-size: 0.9rem
+    background-color: section-line
+    border-bottom-color: section-line
+    border-radius: 5px
+    width: 100%
+    padding: 12px
+    height: 150px
+    position: relative
+    transition: 0.1s all
+    cursor: pointer
+    overflow: hidden
+    &:hover
+      button
+        background-color: secondary-background
+        box-shadow: 2px 2px 0 primary
+    &:active
+      button
+        background-color: secondary-background-active
+        box-shadow: none
+    &:after
+    	bottom: 100%
+    	left: 3.5%
+    	border: solid transparent
+    	content: " "
+    	height: 0
+    	width: 0
+    	position: absolute
+    	pointer-events: none
+    	border-bottom-color: inherit
+    	border-width: 6px
+    @media (max-width: largeViewport)
+      &:after
+      	left: 4%
+    @media (max-width: 592px)
+      height: 112px
+      &:after
+      	left: 3%
+
+    a
+      color: primary
+
+    .project-container
+      overflow: hidden
+      height: calc(100% + 12px)
+
+    .avatar
+      border-radius: 5px
+      margin-right: 7px
+      vertical-align: top
+      display: inline
+      width: project-avatar-size
+      height: project-avatar-size
+
+    button
+      display: inline
+      max-width: "calc(100% - %s - 11px)" % project-avatar-size
+      vertical-align: -13px
+
+    .project-name
+      display: inline-block
+      
+    .description
+      margin-top: 12px
+      max-width: 92%
+      // margin-left: 54px
+      margin-left: 15px
+
+    .overflow-mask
+      position: absolute
+      width: 100%
+      bottom: 0
+      left: 0
+      height: 12px
+      opacity: .6
+      border-bottom-left-radius: 5px
+      border-bottom-right-radius: 5px
+      background-color: section-line
+
+    .private-project-badge
+      display: none
+
+    &.private-project
+      background-color: private
+      border-bottom-color: private
+      .overflow-mask
+        background-color: private        
+      .private-project-badge
+        display: inline-block
+        background-color: private
+        width: 22px
+        height: 20px
+        margin-right: 4px
+        border-radius: 3px
+        background-image: url('https://cdn.glitch.com/f7224274-1330-4022-a8f2-8ae09dbd68a8%2Fprivate.svg?1496253541539')
+        background-position: center
+        background-repeat: no-repeat
+        vertical-align: middle
+
+  .anon-user-sign-up
+    background-color: white
+    margin-top: 3.5rem
+    border: 5px solid anon-user-sign-up-project-outer
+    height: initial
+    padding-bottom: 1.6rem
+    &:before
+      content: " "
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      border: 5px solid anon-user-sign-up-project-inner;
+    &:after
+      border-bottom: none
+    @media(max-width: 600px)
+      margin-top: 1rem
+    // &:hover,
+    // &:active
+    //   button
+    //     background-color: primary-background
+
+.search-results,
+.user-page,
+.team-page,
+.category-page
+  .category
+    float: none
+    width: initial
+  .projects-container
+    li
+      width: 32%
+      @media (max-width: largeViewport)
+        width: 48%
+      @media (max-width: 592px)
+        width: 100%
+
+.project-options
+  display: none
+  position: absolute
+  right: 0px
+  top: 2px
+  padding: 10px
+  padding-bottom: 8px
+  background-color: white
+  border-radius: 5px
+  border: 0
+  &:focus
+    outline: transparent
+    background: #efefef

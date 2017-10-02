@@ -1,0 +1,12 @@
+article.projects(@style)
+  header.category
+    a.category-name(href=@url)
+      h2= @name
+        span.arrow →
+    span.category-image-container
+      a.category-image(href=@url)
+        img(src=@category.avatarUrl alt=@name)
+    p.category-description= @description
+
+  ul.projects-container
+    = @projects

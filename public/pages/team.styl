@@ -1,0 +1,51 @@
+.team-page
+
+  .profile
+    .user-information
+      > span
+        position: relative
+    .users-information
+      position: relative
+      margin-bottom: 10px
+    .users
+      display: none
+    .team-users
+      display: inline
+      margin-top: 0
+    .add-user
+      vertical-align: 12px
+      margin-left: 5px
+      // margin-left: 5px
+      // position: absolute
+
+  .team-user-avatar
+    .button-borderless
+      position: absolute
+      right: 0
+      top: -2px
+      padding: 5px 1px
+      padding-right: 6px
+      border-radius: 5px
+      display: none
+    &:hover
+      .button-borderless
+        display: block
+        background-color: secondary-background
+        .down-arrow
+          opacity: 1
+    &:active,
+    &:focus
+      .button-borderless
+        background-color: secondary-background-active
+
+  .marketing
+    background-color: marketing
+    padding: 18px 12px
+    max-width: 500px
+    border-radius: 5px
+    display: flex
+    img
+      margin-right: 10px
+      
+    p
+      margin-top: 0

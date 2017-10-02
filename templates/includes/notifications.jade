@@ -1,0 +1,14 @@
+aside.notifications
+  - # description updated unused
+  .notification.notifyUserDescriptionUpdated(class=@notifyUserDescriptionUpdated) Description updated
+
+  .notification.notifyUploadFailure(class=@notifyUploadFailure) File upload failed. Try again in a few minutes?
+  .notification.notifyUploading(class=@notifyUploading) Uploading
+    - if @uploadFilesRemaining() > 1
+      span= " #{@uploadFilesRemaining()} assets"
+    - else
+      span asset
+    progress.notify-progress(value=@uploadProgress max=100)
+
+
+  - #.error this image was too big and couldn't' be downsampled. Can you try another image instead?

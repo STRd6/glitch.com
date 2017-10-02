@@ -1,0 +1,90 @@
+.results-list
+  font-weight: normal
+  font-family: sansserif
+  .pop-over-actions
+    padding: 6px
+
+  .results
+    margin: 0
+    padding-left: 0
+
+    .result
+      position: relative
+
+  .result
+    list-style-type: none
+    cursor: pointer
+    border-bottom: 1px solid section-line
+    padding: 6px
+    &:hover,
+    &:focus,
+    &.active
+      border-radius: 3px
+      border-color: transparent
+      // outline: none
+      .result-type
+        color: primary
+//   .other
+//     .result
+//       &:hover,
+//       &.hover,
+//       &:focus
+//         background-color: file-other
+
+
+  .result-type
+    display: inline-block
+    background-color: line-added-active
+    border-radius: 5px
+    margin-right: 5px
+    font-size: 12px
+    // font-weight: 600
+    padding: 2px 6px
+  .result-name
+    color: primary
+    display: inline-block
+    font-weight: 600
+  .result-description
+    word-break: break-word
+    line-height: 18px
+    padding-top: 5px
+
+  .result-avatar
+    margin-right: 5px
+    display: inline-block
+    vertical-align: sub
+    width: 32px
+    height: auto
+    border-radius: 5px
+    background-color: secondary-background
+
+  .result-container
+    border-radius: 3px
+    background-position: center
+
+  .user-result
+    background-color: primary-background
+    padding: 4px 6px
+    border-bottom: 1px solid section-line
+    list-style: none
+    .result-avatar
+      width: 40px
+      margin-right: 6px
+      vertical-align: middle
+    .result-information
+      display: inline-block
+      vertical-align: middle
+      line-height: 20px
+      border-radius: 3px
+      padding: 2px 6px
+    &:hover,
+    &.hover,
+    &:focus
+      background-color: transparent
+      .result-information
+        background-color: section-line
+
+  // .see-all
+  //   color: text-on-secondary-background
+  //   border-bottom: none
+  //   padding-bottom: 6px

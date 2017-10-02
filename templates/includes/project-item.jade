@@ -1,0 +1,15 @@
+li(animationend=@togglePinedState)
+  = @usersListPresenter
+
+  .project-options.button-borderless.opens-pop-over.hidden(click=@showProjectOptionsPop class=@visibleIfUserHasProjectOptions)
+    .down-arrow
+ 
+  a(href=@projectLink click=@showProject)
+    .project(@style data-track="project" data-track-label=@project.domain class=@projectIsPrivate)
+      .project-container
+        img.avatar(src=@avatar alt="#{@project.domain()} avatar")
+        button(class=@buttonCtaIfCurrentUser)
+          span.private-project-badge
+          .project-name=@project.domain
+        .description=@project.description
+        .overflow-mask(style=@maskStyle)

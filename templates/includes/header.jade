@@ -1,0 +1,22 @@
+- SignInPopPresenter = require "../../presenters/pop-overs/sign-in-pop"
+- UserOptionsPopPresenter = require "../../presenters/pop-overs/user-options-pop"
+
+header(role="banner")
+  .header-info
+    a(href=@baseUrl)
+      img.logo(src=@logo alt="Glitch")
+
+  nav(role="navigation")  
+    form(action="#{@baseUrl}search" method="get" role="search" @submit)
+      label.screen-reader-text(for="search-projects") Search Glitch projects
+      input.search-input(name="q" id="search-projects" placeholder="bots, apps, users" value=@application.searchQuery)
+
+    span(class=@hiddenIfSignedIn)
+      button.button.button-small.opens-pop-over(click=@toggleSignInPopVisible) Sign in
+      span(class=@hiddenUnlessSignInPopVisible)
+        = SignInPopPresenter(@.application).template
+    .user-options-pop-button.opens-pop-over(class=@hiddenUnlessSignedIn click=@toggleUserOptionsPopVisible data-tooltip="User options" data-tooltip-right=true)
+      button.user
+        img(src=@userAvatar width=30 height=30 alt="User options")
+        span.down-arrow.icon
+      = UserOptionsPopPresenter(@.application).template
