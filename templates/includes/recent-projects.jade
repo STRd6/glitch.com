@@ -1,0 +1,27 @@
+- Loader = require "./loader"
+- SignInPopPresenter = require "../../presenters/pop-overs/sign-in-pop"
+
+section.profile.recent-projects(class=@hiddenUnlessCurrentUser)
+  h2 Your Projects
+  .profile-container(@style)
+    .profile-info
+      .user-avatar-container
+        a(href=@userLink)
+          .user-avatar(class=@userAvatarIsAnon style=@userAvatarStyle alt="Your avatar")
+          .button.has-emoji Your Profile
+            img.emoji.avatar(src=@userAvatarUrl style=@userAvatarStyle)
+
+    article.projects
+      span(class=@hiddenIfUserIsFetched)
+        = Loader(this)
+
+      ul.projects-container
+        = @projects
+
+        - unless @currentUser.isSignedIn()
+          li
+            .project.anon-user-sign-up.opens-pop-over(click=@toggleSignInPopVisible)
+              p Access all your projects anywhere
+              button Sign in
+              span(class=@hiddenUnlessSignInPopVisible)
+                = SignInPopPresenter(@.application).template

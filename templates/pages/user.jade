@@ -1,0 +1,45 @@
+- cat = "https://cdn.gomix.com/us-east-1%3Acba180f4-ee65-4dfc-8dd5-f143280d3c10%2Fcat.svg"
+- Loader = require "../includes/loader"
+
+main.user-page(role="main")
+
+  = @ctaButtons
+
+  section.hidden(class=@visibleIfUserNotFound)
+    p we didn't find
+      span= @userLoginOrId
+    img(src=cat)
+
+  span(class=@hiddenIfUserNotFound)
+    section.profile
+      .profile-container(style=@userProfileStyle)
+        .profile-info
+          .loader(class=@hiddenIfUserFetched)
+            span= Loader(@application)
+
+          .user-avatar-container(class=@hiddenUnlessUserFetched)
+            .user-avatar(class=@userAvatarIsAnon style=@userAvatarStyle)
+              - # img(src="#{@userAvatarUrl()}")
+              button.hidden.button-small.button-tertiary.upload-avatar-button(class=@hiddenUnlessCurrentUserIsOnTeam click=@uploadAvatar) Upload Avatar
+
+            .user-information
+              h1.username(class=@hiddenUnlessUserHasName)= @userName()
+              h2.login
+                span= "@"
+                span= @userLoginOrId()
+
+              p.thanks(class=@hiddenUnlessUserHasThanks)= @userThanks()
+                span= " "
+                span.emoji.sparkling_heart
+
+              p.description.content-editable(class=@hiddenUnlessUserIsCurrentUser class=@hiddenIfEditingDescription focus=@focusOnEditableDescription placeholder="Tell us about yourself" contenteditable=true role="textbox" aria-multiline=true spellcheck=false)=@editableDescriptionMarkdown
+              p#description-markdown.description.content-editable(class=@hiddenUnlessUserIsCurrentUser class=@hiddenUnlessEditingDescription blur=@defocusOnEditableDescription keyup=@updateDescription placeholder="Tell us about yourself" contenteditable=true role="textbox" aria-multiline=true spellcheck=false)=@editableDescription                
+              
+              p.description.read-only(class=@hiddenIfUserIsNotCurrentUser class=@hiddenIfNoDescription)= @description
+              p.description.anon-user-description(class=@hiddenUnlessUserIsAnon) This user is anonymous until they sign in
+
+      button.button-small.button-tertiary.upload-cover-button(class=@hiddenUnlessUserIsCurrentUser click=@uploadCover) Upload Cover
+
+    span(class=@hiddenIfNotCurrentUserAndNoPins)
+      = @pinnedProjectsList
+    = @recentProjects

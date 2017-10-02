@@ -1,0 +1,105 @@
+.users-container,
+.teams-container
+  margin: 0
+  padding: 0
+  list-style-type: none
+  overflow: auto
+  display: flex
+  flex-wrap: wrap
+
+  li
+    // float: left
+    display: block
+    margin-right: 10px
+    margin-bottom: 1rem
+    width: 32.2%
+    position: relative
+    @media (max-width: largeViewport)
+      width: 48%
+    @media (max-width: 592px)
+      width: 100%
+    &:last-child
+      margin-right: 0
+      margin-bottom: 0
+
+  a
+    color: primary
+    &:hover
+      text-decoration: none
+
+  // .team-users
+  //   display: none
+      
+  .item
+    border-radius: 5px
+    padding: 12px
+    &:hover
+      button,
+      .button
+        background-color: secondary-background
+        box-shadow: 2px 2px 0 primary
+    &:active
+      button,
+      .button
+        background-color: secondary-background-active
+        box-shadow: none
+
+    // .overflow-mask
+    //   position: absolute
+    //   width: 100%
+    //   bottom: 0
+    //   left: 0
+    //   height: 12px
+    //   opacity: .6
+    //   border-bottom-left-radius: 5px
+    //   border-bottom-right-radius: 5px
+    //   background-color: section-line
+
+  .content
+    padding: 12px
+    background-color: section-line
+    border-radius: 5px
+    margin-top: 0
+
+    .users
+      display: block
+      margin-top: 1rem
+      margin-bottom: 0
+
+  .avatar
+    display: inline-block
+    width: 30%
+    height: auto
+    margin-right: 4%
+    overflow: hidden
+
+  .information
+    display: inline-block
+    vertical-align: top
+    width: 66%
+
+    .name
+      font-size: 14px
+      margin-top: 0
+      margin-bottom: 0.8em
+
+    p
+      margin-top: 0.8em
+      margin-bottom: 0
+      font-size: 14px
+
+    .thanks
+      .emoji
+        margin-left: 3px
+        width: 18px
+        height: 18px
+
+    .description
+      // pointer-events: none
+      a
+        color: link
+        &:hover
+          text-decoration: underline
+
+  .verified
+    vertical-align: -5px

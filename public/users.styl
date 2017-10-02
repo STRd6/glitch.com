@@ -1,0 +1,41 @@
+.users
+  display: inline-flex
+  margin-bottom: 8px
+  vertical-align: middle
+  flex-wrap: wrap
+
+  a
+    &:first-child
+      border-top-left-radius: 5px
+      border-bottom-left-radius: 5px
+    &:last-child
+      border-top-right-radius: 5px
+      border-bottom-right-radius: 5px
+    &:focus
+      outline: transparent
+  
+  .user
+    cursor: pointer
+    display: inline-grid
+    border-radius: inherit
+    width: 32px
+    height: 32px
+    img
+      width: 32px
+      height: auto
+      position: relative
+      display: inline
+      border-radius: inherit
+      
+  .made-by-glitch
+    border-radius: 5px
+    cursor: default
+
+.user-names
+  display: inline-block
+  margin-left: 6px
+  font-size: 14px
+  margin-bottom: 10px;
+
+.team-users
+  display: none

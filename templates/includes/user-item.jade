@@ -1,0 +1,12 @@
+li
+  a(href=@userLink)
+    .item(@style)
+      .content
+        img.avatar(src=@avatarUrl alt=@login)
+        .information
+          h3.name(class=@hiddenUnlessName)= @name
+          .button
+            span= @login
+          p.thanks(class=@hiddenUnlessThanks)= @thanks
+            span.emoji.sparkling_heart
+          p.description(class=@hiddenUnlessDescription)= @truncatedDescription

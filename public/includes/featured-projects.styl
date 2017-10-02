@@ -1,0 +1,68 @@
+//mediumViewport = 670px
+//largeViewport = 900px
+
+.featured-projects
+  ul
+    padding: 0
+    margin-bottom: 0
+    display: flex
+    @media (max-width: mediumViewport)
+      // flex-wrap: wrap
+      display: flex
+      flex-wrap: nowrap
+      overflow-x: auto
+      -webkit-overflow-scrolling: touch
+
+  li
+    list-style-type: none
+    margin-right: 10px
+    display: inline-block
+    min-width: 240px
+    &:last-child
+      margin-right: 0
+    @media (max-width: largeViewport)
+      width: 48%
+    @media (max-width: mediumViewport)
+      flex-grow: 0
+      flex-shrink: 0
+      flex-basis: auto
+      margin-right: 8px
+      -webkit-overflow-scrolling: touch
+    @media (max-width: smallViewport)
+      width: 65%
+
+  .featured
+    cursor: pointer
+    margin-right: 10px
+    background-color: section-line
+    display: block
+    width: 100%
+    max-width: 375px
+    height: auto
+    border-radius: 5px
+    @media (max-width: largeViewport)
+      max-width: 425px
+    &:last-child
+      margin-right: 0
+
+  .badge
+    margin-left: 5px
+  
+  .featured-container
+    position: relative
+    &:hover
+      .project-name
+        text-decoration: underline
+    
+    .project-name
+      position: absolute
+      margin: 0
+      padding: 16px
+      bottom: 0
+      left: 0
+      font-weight: 600
+      color: white
+      cursor: pointer
+      @media (max-width: smallViewport)
+        padding: 10px
+

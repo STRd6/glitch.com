@@ -1,0 +1,67 @@
+.user-page
+    
+  .profile
+    margin-top: 2rem
+    position: relative
+    .profile-info
+      width: 100%
+      max-width: 460px
+      background-color: section-line
+      border-radius: 5px
+      padding: 12px
+
+    .user-avatar-container
+      width: 100%
+
+      .user-avatar
+        width: 35%
+        padding-bottom: 35%
+        display: inline-block
+        margin-bottom: 2px
+        vertical-align: top
+
+      .user-information
+        display: inline-block
+        width: 65%
+        padding-left: 16px
+        vertical-align: middle
+
+      .username,
+      .login,
+      .thanks
+        margin: 0
+        margin-bottom: 12px
+
+      .thanks
+        display: inline-block
+        // margin-top: 12px
+
+  .projects
+    padding: 0
+    margin-bottom: 1rem
+    display: block
+    overflow: auto
+
+    .project-options
+      display: block
+
+    // .projects-container
+    //   overflow: visible
+
+    .slide-up
+      animation: slideUp 0.1s ease-out
+      animation-fill-mode: forwards
+
+    .slide-down
+      animation: slideDown 0.1s ease-out
+      animation-fill-mode: forwards
+
+@keyframes slideUp
+  to
+    transform: translateY(-50px)
+    opacity: 0
+
+@keyframes slideDown
+  to
+    transform: translateY(50px)
+    opacity: 0

@@ -1,0 +1,21 @@
+- iconHelp = 'https://cdn.glitch.com/f7224274-1330-4022-a8f2-8ae09dbd68a8%2Fask-for-help.svg?1494954687906'
+
+li
+
+  img.help-icon(src=iconHelp)
+  
+  a(href=@projectUrl)
+    .project(data-track="question" data-track-label=@domain style=@outerColor)
+      .project-container(style=@innerColor)
+
+        img.avatar(src=@userAvatar style=@userColor)
+
+        button= "Help #{@userLogin()}"
+
+        .description.question(title=@fullQuestion)=@filteredQuestion
+
+        .description.tags
+          - context = @
+          - @question.tags().forEach (tag) ->
+            - filteredTag = context.filteredTag tag
+            .tag(alt=tag)= filteredTag

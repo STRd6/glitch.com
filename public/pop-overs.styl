@@ -1,0 +1,183 @@
+.pop-over
+  text-align: left
+  background-color: background-color
+  font-size: 14px
+  margin: 0
+  cursor: initial
+  display: block
+  position: absolute
+  top: 55px;
+  left: initial
+  border-radius: 3px
+  border: 1px solid secondary
+  box-shadow: pop-shadow
+  z-index: 10
+  width: 255px
+  padding: 0
+  button
+    margin-left: 0
+  p
+    color: primary
+    font-weight: normal
+    margin-bottom: 10px
+  section, >form
+    color: primary
+    padding: 12px
+    padding-top: 14px
+    padding-bottom: 14px
+  section
+    &:first-child
+      border-top-left-radius: 3px
+      border-top-right-radius: 3px
+    &:last-child
+      border-bottom: none
+      border-bottom-left-radius: 3px
+      border-bottom-right-radius: 3px
+
+  .description-section
+    margin: 0
+    padding: 0
+    padding-bottom: 4px
+
+  .description
+    margin-top: 2px
+    margin-bottom: 12px
+
+  .pop-over-info
+    margin: 0
+    background-color: secondary-background
+    border-bottom: 1px solid secondary
+    .pop-title
+      font-size: 14px
+      font-weight: bold
+    &.last-section
+      border-bottom: none
+    .info-description
+      margin-bottom: 0
+      line-height: 16px
+
+  .pop-over-actions
+    margin: 0
+    border-bottom: 1px solid secondary
+    position: relative
+    // div
+    //   display: block
+    .emoji
+      display: inline-block
+    .button
+      display: inline-block
+      margin-bottom: 12px
+      margin-left: 0
+      max-width: initial
+    .button-link
+      color: #000
+    .button-link:last-child
+      .button
+        margin: 0
+    &.last-section
+      border-bottom: none
+
+  .danger-zone
+    background-color: warning-background
+
+      
+    
+.sign-in-pop
+  width: 205px
+  right: 10px
+
+.user-options-pop
+  right: 0
+  top: 25px
+  width: 160px
+
+.project-options-pop
+  right: 0
+  top: 22px
+  width: 155px
+
+.cta-pop
+  left: 2px
+  top: 26px
+  width: 215px
+
+.team-user-options-pop
+  left: 2px
+  top: 26px
+  a
+    color: primary
+  .user-result
+    border-radius: 3px
+    border: none
+    background-color: transparent
+    padding: 6px
+  .results
+    padding: 0
+    margin: 0
+  .result
+    &:hover
+      box-shadow: 4px 4px 0 input-border
+    &:active
+      box-shadow: none
+  .result-information
+    background-color: section-line
+  .result-container
+    .result-avatar
+      width: 44px
+      border-radius: 5px
+      vertical-align: top
+    .sparkling_heart
+      margin-left: 2px
+
+.add-team-user-pop
+  left: 2px
+  top: 20px
+  @media(max-width: mediumViewport)
+    left: initial
+
+.add-team-project-pop
+  width: 280px
+  left: 2px
+  top: 25px
+  .result-container
+    &:hover,
+    &:focus,
+    &.active
+      background-color: section-line
+  .results
+    .result-avatar
+      width: 20%
+      margin-right: 5%
+      vertical-align: top
+    .result-information
+      display: inline-block
+      width: 75%
+    .users
+      display: block
+
+    // .users
+    //   pointer-events: none
+
+// refactor this: used on user page for project-options-pop (only?)
+.project
+  overflow-y: auto
+  max-height: 500px
+  &:hover,
+  &:active,
+  &:focus
+    .pop-over
+      button
+        background-color: initial
+        box-shadow: none
+  .pop-over
+    top: initial
+    left: 12px
+    bottom: 12px
+    button
+      padding-bottom: 3px
+      &:hover,
+      &:focus
+        background-color: secondary-background
+      &:active
+        background-color: secondary-background-active
+

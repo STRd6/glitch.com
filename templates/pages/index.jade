@@ -1,0 +1,42 @@
+- ByFogcreek = require "../includes/by-fogcreek"
+- Footer = require "../includes/footer"
+
+- CategoryPresenter = require "../../presenters/category"
+- RecentProjectsPresenter = require "../../presenters/recent-projects"
+- QuestionsPresenter = require "../../presenters/questions"
+- CategoriesPresenter = require "../../presenters/categories"
+
+- COMMUNITY_PROJECT = "https://glitch.com/edit/#!/community"
+
+span
+  - console.log 'rendered index'
+  = @whatIsGlitch
+
+  main(role="main")
+    = @ctaButtons
+
+    = QuestionsPresenter(@application)
+    = RecentProjectsPresenter(@application)
+
+    section.featured-projects
+      h2 Featured
+      ul
+        = @featuredProjects
+
+    - application = @application
+    - @randomCategories().forEach (category) ->
+      = CategoryPresenter(application, category)
+
+    = CategoriesPresenter(@application)
+
+    = ByFogcreek(@application)
+
+    section.made-in-glitch
+      p
+        span Of course, this site was made on Glitch too
+      a(href=COMMUNITY_PROJECT)
+        button.has-emoji View Source
+          .emoji.carp_streamer
+
+  script(src="//fast.wistia.com/embed/medias/vskja9agqj.jsonp" async=true)
+  script(src="//fast.wistia.com/assets/external/E-v1.js" async=true)

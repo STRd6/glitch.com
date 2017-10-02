@@ -1,0 +1,18 @@
+- CategoriesPresenter = require "../../presenters/categories"
+- Loader = require "../includes/loader"
+
+main.category-page(role="main")
+  - console.log 'rendered category page', @
+  article.projects(@style)
+    header.category
+      h2.category-name=@name
+      span.category-image-container
+        img(src=@avatarUrl)
+      p.description=@description
+
+    ul.projects-container    
+      span(class=@hiddenIfCategoryProjectsLoaded)
+        = Loader(this)
+      = @projectElements
+
+  = CategoriesPresenter(@application)

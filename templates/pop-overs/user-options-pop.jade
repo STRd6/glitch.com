@@ -1,0 +1,28 @@
+dialog.pop-over.user-options-pop(class=@hiddenUnlessUserOptionsPopVisible click=@stopPropagation)
+
+  section.pop-over-actions
+    a.button-link(href="https://glitch.com/edit")
+      .button.button-cta.button-small Resume Coding
+      
+    a.button-link(href=@yourProfileLink)
+      .button.button-small.has-emoji.button-tertiary
+        span Your Profile
+        img.emoji.avatar(src=@yourProfileAvatar)
+
+  section.pop-over-actions(class=@hiddenUnlesssUserHasTeams)
+    - @teams().forEach (team) ->
+      - url = team.url
+      - name = team.name
+      - avatarUrl = team.teamAvatarUrl
+
+      a.button-link(href=url)
+        .button.button-small.has-emoji.button-tertiary
+          span= name
+          span= " "
+          img.emoji.avatar(src=avatarUrl)
+    
+
+  section.pop-over-info.last-section.section-has-tertiary-buttons
+    button.button-small.has-emoji.button-tertiary.button-on-secondary-background(click=@signOut)
+      span Sign Out
+      span.emoji.balloon

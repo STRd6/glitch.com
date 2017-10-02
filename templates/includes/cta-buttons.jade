@@ -1,0 +1,16 @@
+section.cta-buttons
+
+  p.marketing(class=@hiddenIfHideForPlatformsMarketing)
+    a(href="https://glitch.com/forplatforms") 
+      img.for-platforms-icon(src="https://cdn.glitch.com/be1ad2d2-68ab-404a-82f4-6d8e98d28d93%2Ffor-platforms-icon.svg?1506442305188")
+      span.for-platforms-text Glitch for Platforms
+    span makes it easy for developers to use your API
+    button.button-small.button-tertiary(click=@hideForPlatformsMarketing) Got it
+    
+  .buttons-wrap
+    button.button.has-emoji.opens-pop-over(click=@toggleCtaPop) Start a New Project
+      .emoji.sparkles
+    = @ctaPop
+
+    a(href="https://glitch.com/edit/" data-track="cta → resume coding" class=@hiddenUnlessIsSignedIn)
+      .button.button-cta Resume Coding

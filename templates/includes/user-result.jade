@@ -1,0 +1,9 @@
+.result-container(style=@hoverBackground)
+  li.result.user-result(tabindex=0 click=@addUserToTeam keydown=@userResultKey)
+    img.result-avatar(src=@avatarUrl)
+    .result-information
+      .result-name.result-info(class=@hiddenUnlessName)= @name
+      .result-login.result-info= @login
+      - # email goes here
+      .result-thanks(class=@hiddenUnlessThanks class=@hiddenUnlessShowingThanks)= @thanks
+        span.emoji.sparkling_heart
